@@ -1,27 +1,89 @@
-# React + TypeScript + Vite
+# Projeto Full Stack de Envio de Email com Node e React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto full stack que permite o envio de emails utilizando as tecnologias Node.js e React. Ele consiste em duas partes principais: o backend construído com Node.js e o frontend desenvolvido com React.
 
-Currently, two official plugins are available:
+## Configuração do Backend
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone este repositório para sua máquina local.
+2. Navegue até o diretório do backend: `cd backend`.
+3. Execute o comando `npm install` para instalar as dependências necessárias.
+4. Crie um arquivo `.env` com as seguintes variáveis de ambiente:
+   - `SMTP_HOST`: o endereço do servidor SMTP.
+   - `SMTP_PORT`: a porta do servidor SMTP.
+   - `SMTP_USERNAME`: o nome de usuário para autenticação SMTP.
+   - `SMTP_PASSWORD`: a senha para autenticação SMTP.
+   - `FROM_EMAIL`: o endereço de email do remetente.
+5. Execute o comando `npm start` para iniciar o servidor backend.
 
-## Expanding the ESLint configuration
+## Configuração do Frontend
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+1. Navegue até o diretório do frontend: `cd frontend`.
+2. Execute o comando `npm install` para instalar as dependências necessárias.
+3. Abra o arquivo `src/config.js` e configure a URL do backend.
+4. Execute o comando `npm start` para iniciar o servidor de desenvolvimento do frontend.
 
-- Configure the top-level `parserOptions` property like this:
+## Utilização
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+Após configurar o backend e o frontend, você pode acessar o aplicativo em seu navegador. O frontend permite que você preencha um formulário de envio de email, incluindo o destinatário, assunto e conteúdo do email. Ao enviar o formulário, o backend irá processar a requisição e enviar o email utilizando as informações fornecidas.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+
+
+![th](https://github.com/Guilhermefonseca2021/email-service/assets/92196697/8d064722-0c0a-4663-9ec3-e7228c7dbdcb)
+
+# Arquitetura Limpa (Clean Architecture)
+
+Este é um guia sobre a Arquitetura Limpa (Clean Architecture) aplicada a projetos de backend. A Arquitetura Limpa é um conjunto de princípios e práticas que visam criar sistemas flexíveis, escaláveis e de fácil manutenção. Ela é baseada na separação de preocupações e na dependência de abstrações sobre implementações concretas.
+
+## Princípios da Arquitetura Limpa
+
+A Arquitetura Limpa é baseada em quatro princípios principais:
+
+1. **Independência de Frameworks**: Arquitetura independente de qualquer framework externo, bibliotecas ou frameworks , permite que a aplicação seja facilmente adaptada a diferentes tecnologias.
+
+2. **Testabilidade**: A arquitetura deve facilitar a realização de testes automatizados, permitindo a criação de testes unitários e de integração de forma eficiente.
+
+3. **Independência de UI**: A lógica de negócio não deve depender da interface do usuário. Isso permite que a mesma lógica de negócio seja reutilizada em diferentes interfaces, como API REST, CLI ou interface gráfica.
+
+4. **Independência de Banco de Dados**: Aquitetura independente do banco de dados utilizado. Permite que seja possível trocar o banco de dados sem afetar a lógica de negócio. Incrivel para caramba, desculpa mas isso me conquistou, e é muito limpo trabalhar dessa maneira hahahaha.
+
+## Componentes da Arquitetura Limpa
+
+A Arquitetura Limpa é composta por camadas e componentes que interagem entre si de forma organizada. Os principais componentes são:
+
+1. **Entities**: São as entidades de negócio, que representam os conceitos e regras de domínio da aplicação. Elas são independentes de qualquer tecnologia ou framework.
+
+2. **Use Cases (Interactors)**: São os casos de uso da aplicação, que implementam as regras de negócio. Eles orquestram a interação entre as entidades e são independentes de qualquer tecnologia externa.
+
+3. **Interfaces**: São as interfaces de entrada e saída da aplicação. Elas podem ser representadas por APIs REST, CLI, interfaces gráficas, entre outras. As interfaces são responsáveis por adaptar os dados recebidos e enviados pelas entidades e casos de uso.
+
+4. **Frameworks e Drivers**: São os componentes externos utilizados pela aplicação, como frameworks web, bibliotecas de acesso a banco de dados, entre outros. Eles são responsáveis por adaptar os dados da aplicação para as tecnologias utilizadas.
+
+## Organização da Estrutura de Diretórios
+
+Para aplicar a Arquitetura Limpa em um projeto de backend, é comum utilizar uma estrutura de diretórios que reflete a separação de responsabilidades. A seguir, apresentamos uma sugestão de estrutura de diretórios:
+
+src/
+├── entities/                                                         - `entities`: Diretório que contém as entidades de negócio da aplicação.
+├── usecases/                                                         - `usecases`: Diretório que contém os casos de uso da aplicação.
+├── interfaces/                                                       - `interfaces`: Diretório que contém as interfaces de entrada e saída da aplicação.
+│   ├── controllers/                                                  - `controllers`: Diretório que contém os controladores responsáveis por receber as requisições e enviar as respostas HTTP.  
+│   ├── presenters/                                                   - `presenters`: Diretório que contém os apresentadores responsáveis por formatar os dados de saída da aplicação. 
+│   └── repositories/                                                 - `repositories`: Diretório que contém as interfaces para acesso a dados, como bancos de dados ou serviços externos.    
+├── frameworks/                                                       - `frameworks`: Diretório que contém os componentes externos utilizados pela aplicação.
+│   ├── database/                                                     - `database`: Diretório que contém os adaptadores para acesso ao banco de dados.
+│   ├── http/
+│   └── ...                                                           - `http`: Diretório que contém os adaptadores para comunicação via HTTP.
+└── main/
+    └── ...                                                           - `main`: Diretório que contém a lógica de inicialização da aplicação.
+
+
+<a href="https://email-service-one.vercel.app/"> clique aqui para testar aplicaçã0 </a>
+
+
+<img width="1276" alt="Untitled" src="https://github.com/Guilhermefonseca2021/email-service/assets/92196697/afb0b4bc-ee5c-459c-a62a-4ce71a90a93f">
+
+
+## Contribuição
+
+Fique à vontade para contribuir com melhorias para este projeto. Você pode abrir uma issue para relatar problemas ou sugerir novas funcionalidades. Além disso, pull requests são bem-vindos!
