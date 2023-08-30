@@ -60,17 +60,26 @@ A Arquitetura Limpa é composta por camadas e componentes que interagem entre si
 ## Organização da Estrutura de Diretórios
 
 Para aplicar a Arquitetura Limpa em um projeto de backend, é comum utilizar uma estrutura de diretórios que reflete a separação de responsabilidades. A seguir, apresentamos uma sugestão de estrutura de diretórios:
+
+
 src/
+
 ├── entities/
+
 ├── usecases/
+
 ├── interfaces/
+
 │   ├── controllers/
 │   ├── presenters/
 │   └── repositories/
+
+
 ├── frameworks/
 │   ├── database/
 │   ├── http/
 │   └── ...
+
 └── main/
     └── ...
 
