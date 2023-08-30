@@ -27,9 +27,7 @@ Este é um projeto full stack que permite o envio de emails utilizando as tecnol
 Após configurar o backend e o frontend, você pode acessar o aplicativo em seu navegador. O frontend permite que você preencha um formulário de envio de email, incluindo o destinatário, assunto e conteúdo do email. Ao enviar o formulário, o backend irá processar a requisição e enviar o email utilizando as informações fornecidas.
 
 
-
-
-![th](https://github.com/Guilhermefonseca2021/email-service/assets/92196697/8d064722-0c0a-4663-9ec3-e7228c7dbdcb)
+<img width="1276" alt="Untitled" src="https://github.com/Guilhermefonseca2021/email-service/assets/92196697/5e49a908-23a4-432e-b92b-c92dbb1a793e">
 
 # Arquitetura Limpa (Clean Architecture)
 
@@ -62,20 +60,19 @@ A Arquitetura Limpa é composta por camadas e componentes que interagem entre si
 ## Organização da Estrutura de Diretórios
 
 Para aplicar a Arquitetura Limpa em um projeto de backend, é comum utilizar uma estrutura de diretórios que reflete a separação de responsabilidades. A seguir, apresentamos uma sugestão de estrutura de diretórios:
-
 src/
-├── entities/                                                         - `entities`: Diretório que contém as entidades de negócio da aplicação.
-├── usecases/                                                         - `usecases`: Diretório que contém os casos de uso da aplicação.
-├── interfaces/                                                       - `interfaces`: Diretório que contém as interfaces de entrada e saída da aplicação.
-│   ├── controllers/                                                  - `controllers`: Diretório que contém os controladores responsáveis por receber as requisições e enviar as respostas HTTP.  
-│   ├── presenters/                                                   - `presenters`: Diretório que contém os apresentadores responsáveis por formatar os dados de saída da aplicação. 
-│   └── repositories/                                                 - `repositories`: Diretório que contém as interfaces para acesso a dados, como bancos de dados ou serviços externos.    
-├── frameworks/                                                       - `frameworks`: Diretório que contém os componentes externos utilizados pela aplicação.
-│   ├── database/                                                     - `database`: Diretório que contém os adaptadores para acesso ao banco de dados.
+├── entities/
+├── usecases/
+├── interfaces/
+│   ├── controllers/
+│   ├── presenters/
+│   └── repositories/
+├── frameworks/
+│   ├── database/
 │   ├── http/
-│   └── ...                                                           - `http`: Diretório que contém os adaptadores para comunicação via HTTP.
+│   └── ...
 └── main/
-    └── ...                                                           - `main`: Diretório que contém a lógica de inicialização da aplicação.
+    └── ...
 
 
 <a href="https://email-service-one.vercel.app/"> clique aqui para testar aplicaçã0 </a>
