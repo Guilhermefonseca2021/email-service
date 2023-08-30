@@ -69,16 +69,15 @@ src/
 ├── usecases/
 
 ├── interfaces/
-
-│   ├── controllers/
-│   ├── presenters/
-│   └── repositories/
+    ├─controllers/
+    ├── presenters/
+    └── repositories/
 
 
 ├── frameworks/
-│   ├── database/
-│   ├── http/
-│   └── ...
+    ├── database/
+    ├── http/
+    └── ...
 
 └── main/
     └── ...
