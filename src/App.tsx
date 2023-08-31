@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useIdentityMutation } from './hooks/useIdentityMutation'
 
 function App() {
-  const { mutate, isLoading } = useIdentityMutation()
+  const { mutate } = useIdentityMutation()
   const [email, setEmail] = useState('')
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
@@ -20,18 +20,18 @@ function App() {
   return (
     <>
       <div className='container'>
-        <form onSubmit={submit}>
+        <form>
           <div className='name-form-container'>
             <PrimaryInput 
               value={firstName} 
-              onChange={event => setEmail(event.target.value)} 
+              onChange={event => setFirstName(event.target.value)} 
               name='firstName' 
               label='Primeiro nome:'
               placeholder='Guilherme'
             />
             <PrimaryInput 
               value={lastName} 
-              onChange={event => setEmail(event.target.value)} 
+              onChange={event => setLastName(event.target.value)} 
               name='lastName' 
               label='Sobrenome:'
               placeholder='Fonseca'
@@ -46,7 +46,7 @@ function App() {
             placeholder='guih@gmail.com'
           />
           <Spacer height='3' />
-          <Button colorScheme='green'>Enviar</Button>
+          <Button colorScheme='green' onClick={submit}>Enviar</Button>
         </form>
 
         <div className="product-details wrapper">
@@ -54,7 +54,7 @@ function App() {
           <p>Você irá pegar:</p>
           <span>R$ 250</span>
           <p className='product-info'>
-          Assinatura mensal de plano de envios solução conveniente e econômica para empresas enviar campanhas de email, engajar com seu público-alvo.  
+          Assinatura mensal de plano de envios solução conveniente e econômica para empresas enviar campanhas de email, engajar com seu público-alvo.
           </p>
         </div>
       </div>
