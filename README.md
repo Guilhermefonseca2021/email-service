@@ -1,6 +1,6 @@
 # Projeto Full Stack de Envio de Email com Node e React
 
-Este é um projeto full stack que permite o envio de emails utilizando as tecnologias Node.js e React. Ele consiste em duas partes principais: o backend construído com Node.js e o frontend desenvolvido com React.
+Este é um projeto full stack que permite o envio de emails utilizando as tecnologias Node.js e React. Ele consiste em duas partes principais: o backend construído com Node.js e o frontend desenvolvido com React. trabalhando servico de fila com o fastfy micro-framework para integrar o back and do node com front end cadastrando dados do usuario. entregando mensagens para usuarios(com redis)
 
 ## Configuração do Backend
 
@@ -88,6 +88,12 @@ src/
 
 <img width="1276" alt="Untitled" src="https://github.com/Guilhermefonseca2021/email-service/assets/92196697/afb0b4bc-ee5c-459c-a62a-4ce71a90a93f">
 
+
+## React Query
+
+
+-react query trabalha com cashs de dados para n deixar o user esperando
+-bliblioteca React query adiciona um superset de controllers, se isLoading, reFetch, isError fazendo cash dos dados.
 
 ## Contribuição
 

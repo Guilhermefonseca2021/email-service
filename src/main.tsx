@@ -13,6 +13,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <ChakraProvider>
         <App />
       </ChakraProvider>
-    </QueryClientProvider>
+    </QueryClientProvider>  
   </React.StrictMode>,
 )
