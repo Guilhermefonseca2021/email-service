@@ -1,41 +1,33 @@
-# Projeto Full Stack de Envio de Email com Node e React
+## Projeto Full Stack de Envio de Email com Node e React
+
+<p align="center">
+   <a href="#Rodando-Front-End"></a>
+</p>
+
+## Features
+
+* [x] envio de email
+* [ ] servico de fila
+* [x] cadastro de dados
+* [ ] mensagem ao usuario
+* [x] react query
+* [x] clean arquiteture
+* [x] design pattern
+
+
+## sobre o projeto
 
 Este é um projeto full stack que permite o envio de emails utilizando as tecnologias Node.js e React. Ele consiste em duas partes principais: o backend construído com Node.js e o frontend desenvolvido com React. trabalhando servico de fila com o fastfy micro-framework para integrar o back and do node com front end cadastrando dados do usuario. entregando mensagens para usuarios(com redis)
 
-## Configuração do Backend
 
-1. Clone este repositório para sua máquina local.
-2. Navegue até o diretório do backend: `cd backend`.
-3. Execute o comando `npm install` para instalar as dependências necessárias.
-4. Crie um arquivo `.env` com as seguintes variáveis de ambiente:
-   - `SMTP_HOST`: o endereço do servidor SMTP.
-   - `SMTP_PORT`: a porta do servidor SMTP.
-   - `SMTP_USERNAME`: o nome de usuário para autenticação SMTP.
-   - `SMTP_PASSWORD`: a senha para autenticação SMTP.
-   - `FROM_EMAIL`: o endereço de email do remetente.
-5. Execute o comando `npm start` para iniciar o servidor backend.
 
-## Configuração do Frontend
-
-1. Navegue até o diretório do frontend: `cd frontend`.
-2. Execute o comando `npm install` para instalar as dependências necessárias.
-3. Abra o arquivo `src/config.js` e configure a URL do backend.
-4. Execute o comando `npm start` para iniciar o servidor de desenvolvimento do frontend.
-
-## Utilização
+## Rodando Front end
 
 Após configurar o backend e o frontend, você pode acessar o aplicativo em seu navegador. O frontend permite que você preencha um formulário de envio de email, incluindo o destinatário, assunto e conteúdo do email. Ao enviar o formulário, o backend irá processar a requisição e enviar o email utilizando as informações fornecidas.
 
-
 <img width="1276" alt="Untitled" src="https://github.com/Guilhermefonseca2021/email-service/assets/92196697/5e49a908-23a4-432e-b92b-c92dbb1a793e">
 
-# Arquitetura Limpa (Clean Architecture)
-
-Este é um guia sobre a Arquitetura Limpa (Clean Architecture) aplicada a projetos de backend. A Arquitetura Limpa é um conjunto de princípios e práticas que visam criar sistemas flexíveis, escaláveis e de fácil manutenção. Ela é baseada na separação de preocupações e na dependência de abstrações sobre implementações concretas.
-
 ## Princípios da Arquitetura Limpa
-
-A Arquitetura Limpa é baseada em quatro princípios principais:
 
 1. **Independência de Frameworks**: Arquitetura independente de qualquer framework externo, bibliotecas ou frameworks , permite que a aplicação seja facilmente adaptada a diferentes tecnologias.
 
@@ -83,7 +75,7 @@ src/
     └── ...
 
 
-<a href="https://email-service-one.vercel.app/"> clique aqui para testar aplicaçã0 </a>
+<a href="https://email-service-one.vercel.app/"> clique aqui para testar aplicação </a>
 
 
 <img width="1276" alt="template" src="https://github.com/Guilhermefonseca2021/email-service/assets/92196697/692e8899-358b-431b-b245-b2b186789f72">
@@ -91,8 +83,7 @@ src/
 
 ## React Query
 
-
--react query trabalha com cashs de dados para n deixar o user esperando
+-react query trabalha com cashs de dados para nao deixar o user esperando
 -bliblioteca React query adiciona um superset de controllers, se isLoading, reFetch, isError fazendo cash dos dados.
 
 ## Contribuição
